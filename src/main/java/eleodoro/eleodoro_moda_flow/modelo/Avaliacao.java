@@ -1,3 +1,4 @@
+package eleodoro.eleodoro_moda_flow.modelo;
 import java.time.LocalDate;
 
 public class Avaliacao {
