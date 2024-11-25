@@ -1,17 +1,17 @@
 package eleodoro.eleodoro_moda_flow.modelo;
 
-public class estampa {
+public class Estampa {
 
     private String imagem;
     private String tipo;
     private double comprimento;
    
    
-    public estampa() {
+    public Estampa() {
     }
 
 
-    public estampa(String imagem, String tipo, double comprimento) {
+    public Estampa(String imagem, String tipo, double comprimento) {
         this.imagem = imagem;
         this.tipo = tipo;
         this.comprimento = comprimento;
@@ -77,7 +77,7 @@ public class estampa {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        estampa other = (estampa) obj;
+        Estampa other = (Estampa) obj;
         if (imagem == null) {
             if (other.imagem != null)
                 return false;
