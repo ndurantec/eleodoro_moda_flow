@@ -1,16 +1,16 @@
 package eleodoro.eleodoro_moda_flow.modelo;
 
-public class produto {
+public class Produto {
     private String nome;
     private String modelo;
     private String cor;
     private int tamanho;
     private Pedido pedido;
 
-    public produto() {
+    public Produto() {
     }
 
-    public produto(String nome, String modelo, String cor, int tamanho, Pedido pedido) {
+    public Produto(String nome, String modelo, String cor, int tamanho, Pedido pedido) {
         this.nome = nome;
         this.modelo = modelo;
         this.cor = cor;
@@ -84,7 +84,7 @@ public class produto {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        produto other = (produto) obj;
+        Produto other = (Produto) obj;
         if (nome == null) {
             if (other.nome != null)
                 return false;
