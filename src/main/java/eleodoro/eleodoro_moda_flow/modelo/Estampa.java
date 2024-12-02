@@ -1,16 +1,29 @@
 package eleodoro.eleodoro_moda_flow.modelo;
 
-public class Estampa {
+import java.io.Serializable;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Estampa implements Serializable {
+
+    private static final Long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;   
     private String imagem;
     private String tipo;
     private double comprimento;
    
-   
+    @Deprecated
     public Estampa() {
     }
 
-
+    
     public Estampa(String imagem, String tipo, double comprimento) {
         this.imagem = imagem;
         this.tipo = tipo;
@@ -94,6 +107,9 @@ public class Estampa {
     }
 
 
+    public Estampa novoEstampa(){
+        return new Estampa(imagem, tipo, comprimento);
+    }
     
 
 
