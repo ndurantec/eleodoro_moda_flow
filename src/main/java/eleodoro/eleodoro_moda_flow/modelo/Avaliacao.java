@@ -1,8 +1,5 @@
 package eleodoro.eleodoro_moda_flow.modelo;
-<<<<<<< HEAD
 
-=======
->>>>>>> 25db518dc3b5b06b548ef0d3fc1f48dc6f4a219c
 import java.time.LocalDate;
 
 public class Avaliacao {
