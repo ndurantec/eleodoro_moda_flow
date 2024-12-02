@@ -1,12 +1,24 @@
 package eleodoro.eleodoro_moda_flow.modelo;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Produto {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    
     private String nome;
     private String modelo;
     private String cor;
     private int tamanho;
     private Pedido pedido;
 
+    @Deprecated
     public Produto() {
     }
 
@@ -108,6 +120,14 @@ public class Produto {
         } else if (!pedido.equals(other.pedido))
             return false;
         return true;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }    
 }
 
