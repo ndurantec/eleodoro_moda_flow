@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-package eleodoro.eleodoro_moda_flow.modelo;
+package eleodoro.eleodoro_moda_flow.modelo; 
 
 import java.io.Serializable;
-=======
-package eleodoro.eleodoro_moda_flow.modelo; 
->>>>>>> 888ad5b09d9d9c34b45382a1b15bd6ff3429443a
 import java.time.LocalDate;
 
 import jakarta.annotation.Generated;
