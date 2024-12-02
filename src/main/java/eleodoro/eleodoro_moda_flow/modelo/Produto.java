@@ -12,7 +12,9 @@ import jakarta.persistence.Id;
 public class Produto {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  
+
     private Long id;
 
     private static final long serialVersionUID =1L;

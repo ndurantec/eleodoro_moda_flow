@@ -1,24 +1,45 @@
 package eleodoro.eleodoro_moda_flow.modelo;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Pedido {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Pedido implements Serializable{
     
+    private static final long serialVersionUID =1L;
+
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    private Long id;
+    private int quantidade;
+    private LocalDate data;
+    private double valorTotal;
+    private Estampa estampa;
+
+    @Deprecated
+    public Pedido() {
+        }
 
     public Pedido(int quantidade, LocalDate data, double valorTotal, Estampa estampa) {
+
         this.quantidade = quantidade;
         this.data = data;
         this.valorTotal = valorTotal;
         this.estampa = estampa;
         }
     
-    public Pedido() {
+    public Long getId() {
+        return id;
+     }
+    
+    public void setId(Long id) {
+        this.id = id;
     }
-
-        private int quantidade;
-        private LocalDate data;
-        private double valorTotal;
-        private Estampa estampa;
 
     public int getQuantidade() {
         return quantidade;
