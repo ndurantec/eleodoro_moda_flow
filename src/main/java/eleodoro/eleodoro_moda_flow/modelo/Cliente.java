@@ -1,12 +1,34 @@
 package eleodoro.eleodoro_moda_flow.modelo;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+
+@Entity
 public class Cliente {
+
+    public class Conta implements Serializable{
+        
+    }
+    
+    private static final long serialVersionUID =1L;
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String Nome;
     private LocalDate dateCad;
     private String cpf;   
    
+
+    @Deprecated
+
+
     public Cliente(String nome, LocalDate dateCad, String cpf) {
         Nome = nome;
         this.dateCad = dateCad;
