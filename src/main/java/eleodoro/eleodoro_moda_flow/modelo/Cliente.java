@@ -11,11 +11,9 @@ import jakarta.persistence.Id;
 
 
 @Entity
-public class Cliente {
+public class Cliente implements Serializable {
 
-    public class Conta implements Serializable{
-        
-    }
+// mapeamento concluido
     
     private static final long serialVersionUID =1L;
     
