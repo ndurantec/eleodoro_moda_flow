@@ -3,6 +3,7 @@ package eleodoro.eleodoro_moda_flow.modelo;
 import java.io.Serializable;
 
 import java.time.LocalDate;
+import java.util.Map;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -85,6 +86,11 @@ public class Avaliacao implements Serializable{
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
+    }
+
+
+    public Map<String, ?> getId() {
+        return null;
     }
  
 
