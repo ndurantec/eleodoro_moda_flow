@@ -1,5 +1,6 @@
 package eleodoro.eleodoro_moda_flow.dto;
 
+import eleodoro.eleodoro_moda_flow.modelo.Estampa;
 import eleodoro.eleodoro_moda_flow.modelo.Pedido;
 import eleodoro.eleodoro_moda_flow.modelo.Produto;
 
@@ -81,6 +82,7 @@ public class ProdutoDto {
         return "ProdutoDto [id=" + id + ", nome=" + nome + ", modelo=" + modelo + ", cor=" + cor + ", tamanho="
                 + tamanho + ", pedido=" + pedido + "]";
     }
+
 
     
 }
