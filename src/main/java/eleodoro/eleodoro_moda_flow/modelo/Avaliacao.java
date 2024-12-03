@@ -1,16 +1,7 @@
-<<<<<<< HEAD
-
 package eleodoro.eleodoro_moda_flow.modelo;
 
 import java.io.Serializable;
 
-package eleodoro.eleodoro_moda_flow.modelo; 
-
-=======
-package eleodoro.eleodoro_moda_flow.modelo; 
-
-import java.io.Serializable;
->>>>>>> 3b0d4ece356dd113f4d4db122cfae2a4b02dad61
 import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
