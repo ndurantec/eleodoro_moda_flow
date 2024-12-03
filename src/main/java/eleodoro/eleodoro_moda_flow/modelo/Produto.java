@@ -9,17 +9,13 @@ import jakarta.persistence.Id;
 
 @Entity
 
-public class Produto {
-
-    @Id
-
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  
-
-    private Long id;
+public class Produto implements Serializable{
 
     private static final long serialVersionUID =1L;
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  
+    private Long id;
     private String nome;
     private String modelo;
     private String cor;

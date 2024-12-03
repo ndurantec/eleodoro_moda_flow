@@ -1,6 +1,7 @@
-package eleodoro.eleodoro_moda_flow.modelo; 
+package eleodoro.eleodoro_moda_flow.modelo;
 
 import java.io.Serializable;
+
 import java.time.LocalDate;
 import java.util.Map;
 
