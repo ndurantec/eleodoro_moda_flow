@@ -1,8 +1,16 @@
 package eleodoro.eleodoro_moda_flow.modelo;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Venda {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+
+@Entity
+public class Venda implements Serializable{
 
     public Venda(int qantidade, double valor, LocalDate data, Pedido pedido) {
         this.qantidade = qantidade;
@@ -13,6 +21,8 @@ public class Venda {
     public Venda() {
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private int qantidade;
     private double valor;
     private LocalDate data;

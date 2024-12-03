@@ -2,6 +2,7 @@ package eleodoro.eleodoro_moda_flow.dto;
 
 import java.time.LocalDate;
 
+import eleodoro.eleodoro_moda_flow.modelo.Devolucao;
 import eleodoro.eleodoro_moda_flow.modelo.Venda;
 
 public class DevolucaoDto {
@@ -53,5 +54,8 @@ public class DevolucaoDto {
         this.venda = venda;
     }
 
+    public Devolucao novaDevolucao(){
+        return new Devolucao(dataDevolucao, motivo, valorReembolsado, venda);
+    }
     
 }
