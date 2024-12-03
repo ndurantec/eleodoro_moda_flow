@@ -8,12 +8,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
+
 public class Produto implements Serializable{
 
     private static final long serialVersionUID =1L;
 
     @Id
-    @GeneratedValue ( strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  
     private Long id;
     private String nome;
     private String modelo;
@@ -33,13 +34,13 @@ public class Produto implements Serializable{
         this.pedido = pedido;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
-    }   
+    }    
 
     public String getNome() {
         return nome;
@@ -131,6 +132,8 @@ public class Produto implements Serializable{
         } else if (!pedido.equals(other.pedido))
             return false;
         return true;
-    }    
+    }
+
+    
 }
 

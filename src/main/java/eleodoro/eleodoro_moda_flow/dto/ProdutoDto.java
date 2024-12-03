@@ -5,12 +5,14 @@ import eleodoro.eleodoro_moda_flow.modelo.Produto;
 
 public class ProdutoDto {
 
+    private Long id;
     private String nome;
     private String modelo;
     private String cor;
     private int tamanho;
     private Pedido pedido;
 
+    @Deprecated
     public ProdutoDto() {
     }
 
@@ -20,6 +22,14 @@ public class ProdutoDto {
         this.cor = cor;
         this.tamanho = tamanho;
         this.pedido = pedido;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -66,6 +76,11 @@ public class ProdutoDto {
         return new Produto(nome, modelo, cor, tamanho, pedido);
     }
 
-    
+    @Override
+    public String toString() {
+        return "ProdutoDto [id=" + id + ", nome=" + nome + ", modelo=" + modelo + ", cor=" + cor + ", tamanho="
+                + tamanho + ", pedido=" + pedido + "]";
+    }
+
     
 }
