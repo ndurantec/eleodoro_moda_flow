@@ -3,7 +3,6 @@ package eleodoro.eleodoro_moda_flow.modelo;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

@@ -1,6 +1,10 @@
 package eleodoro.eleodoro_moda_flow.dto;
 
+import java.time.LocalDate;
+
 import eleodoro.eleodoro_moda_flow.modelo.Avaliacao;
+import eleodoro.eleodoro_moda_flow.modelo.Cliente;
+import eleodoro.eleodoro_moda_flow.modelo.Venda;
 
 public class AvaliacaoDto {
     
@@ -23,7 +27,7 @@ public class AvaliacaoDto {
     }
 
     public Avaliacao novoAvaliacao(){
-        return new Avaliacao(nota, comentario, dataAvaliacao, cliente, venda);
+        return new Avaliacao(nota, comentario, dataAvaliacao, venda, cliente);
     }
 
 }
