@@ -3,6 +3,7 @@ package eleodoro.eleodoro_moda_flow.dto;
 import java.time.LocalDate;
 
 import eleodoro.eleodoro_moda_flow.modelo.Estampa;
+import eleodoro.eleodoro_moda_flow.modelo.Pedido;
 
 public class PedidoDto {
 
@@ -67,6 +68,16 @@ public class PedidoDto {
     public String toString() {
         return "PedidoDto [id=" + id + ", quantidade=" + quantidade + ", data=" + data + ", valorTotal=" + valorTotal
                 + ", estampa=" + estampa + "]";
+    }
+
+    public Pedido novoPedido() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'novoPedido'");
+    }
+
+    public Object getNome() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getNome'");
     }   
 
 }
