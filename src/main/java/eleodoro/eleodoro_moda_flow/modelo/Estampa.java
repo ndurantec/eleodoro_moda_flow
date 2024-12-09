@@ -1,6 +1,7 @@
 package eleodoro.eleodoro_moda_flow.modelo;
 
 import java.io.Serializable;
+import java.util.Map;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -109,6 +110,18 @@ public class Estampa implements Serializable {
 
     public Estampa novoEstampa(){
         return new Estampa(imagem, tipo, comprimento);
+    }
+
+
+    public Map<String, ?> getId() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getId'");
+    }
+
+
+    public void setNome(Object nome) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setNome'");
     }
     
 

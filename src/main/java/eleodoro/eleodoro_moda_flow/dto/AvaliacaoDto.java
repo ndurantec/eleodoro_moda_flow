@@ -71,4 +71,8 @@ public class AvaliacaoDto {
         return new Avaliacao(nota, comentario, dataAvaliacao, venda, cliente);
     }
 
+    public Avaliacao atualizarAvaliacao(Avaliacao avaliacaoExistente) {
+        return null;
+    }
+
 }

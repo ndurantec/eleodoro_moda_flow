@@ -61,4 +61,10 @@ public class EstampaDto {
         return new Estampa(imagem, tipo, comprimento);
 
     }
+
+
+    public Object getNome() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getNome'");
+    }
 }
