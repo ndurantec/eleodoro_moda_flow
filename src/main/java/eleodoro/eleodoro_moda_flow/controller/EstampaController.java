@@ -17,12 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import eleodoro.eleodoro_moda_flow.dto.EstampaDto;
-import eleodoro.eleodoro_moda_flow.dto.PedidoDto;
-import eleodoro.eleodoro_moda_flow.dto.ProdutoDto;
 import eleodoro.eleodoro_moda_flow.modelo.Estampa;
-import eleodoro.eleodoro_moda_flow.modelo.Pedido;
 import eleodoro.eleodoro_moda_flow.repository.EstampaRepository;
-
 
 
 
