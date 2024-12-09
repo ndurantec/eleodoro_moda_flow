@@ -1,6 +1,6 @@
 package eleodoro.eleodoro_moda_flow.dto;
 
-import eleodoro.eleodoro_moda_flow.modelo.Estampa;
+import eleodoro.eleodoro_moda_flow.modelo.Devolucao;
 import eleodoro.eleodoro_moda_flow.modelo.Pedido;
 import eleodoro.eleodoro_moda_flow.modelo.Produto;
 
@@ -84,7 +84,7 @@ public class ProdutoDto {
     }
 
 
-    public Produto atualizarProduto(Produto produtoExistente) {
+    public Produto atualizarProduto(Devolucao produtoExistente) {
         return null;
     }
 
