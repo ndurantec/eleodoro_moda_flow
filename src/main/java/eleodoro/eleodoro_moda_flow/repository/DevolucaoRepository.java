@@ -1,23 +1,9 @@
 package eleodoro.eleodoro_moda_flow.repository;
 
-public class DevolucaoRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
-<<<<<<< HEAD
-    public static Optional<Devolucao> findById(Long id) {
-        return null;
-    }
+import eleodoro.eleodoro_moda_flow.modelo.Devolucao;
 
-    public void save(Devolucao novaDevolucao) {
-    }
-
-    public boolean existsById(Long id) {
-        return false;
-    }
-
-    public void deleteById(Long id) {
-    }
-=======
-    
->>>>>>> b657e7682ff6750064e6db610b35f429a5717c40
+public interface DevolucaoRepository extends JpaRepository<Devolucao, Long>{
     
 }
