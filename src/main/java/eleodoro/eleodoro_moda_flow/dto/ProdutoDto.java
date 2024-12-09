@@ -83,12 +83,11 @@ public class ProdutoDto {
                 + tamanho + ", pedido=" + pedido + "]";
     }
 
-<<<<<<< HEAD
-=======
+
     public Produto atualizarProduto(Produto produtoExistente) {
         return null;
     }
->>>>>>> 6ba7cec8d4e4c75d7a3dca977f9feb9e46af3d41
+
 
     
 }
