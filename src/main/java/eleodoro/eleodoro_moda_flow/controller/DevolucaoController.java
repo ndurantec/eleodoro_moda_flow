@@ -51,13 +51,13 @@ public class DevolucaoController {
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<Devolucao> buscarPorId(@PathVariable Long id) {
-        Optional<Devolucao> devolucao = DevolucaoRepository.findById(id);
+        Optional<Devolucao> devolucao = devolucaoRepository.findById(id);
         return devolucao.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
 
     @PutMapping(value = "/{id}")
     public ResponseEntity<Devolucao> update(@PathVariable Long id, @RequestBody DevolucaoDto devolucaoDto) {
-        Optional<Devolucao> devolucaoBanco = DevolucaoRepository.findById(id);
+        Optional<Devolucao> devolucaoBanco = devolucaoRepository.findById(id);
 
         if (devolucaoBanco.isPresent()) {
             Devolucao devolucaoModificada = devolucaoBanco.get();

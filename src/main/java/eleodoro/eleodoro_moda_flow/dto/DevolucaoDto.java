@@ -13,6 +13,7 @@ public class DevolucaoDto {
     private double valorReembolsado;
     private Venda venda;
 
+    @Deprecated
      public DevolucaoDto() {
     }
 

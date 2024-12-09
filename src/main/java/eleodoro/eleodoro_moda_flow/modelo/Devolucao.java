@@ -21,7 +21,9 @@ public class Devolucao implements Serializable{
     private double valorReembolsado;
     private Venda venda;
 
+    @Deprecated
       public Devolucao(LocalDate dataDevolucao, String motivo, double valorReembolsado, Venda venda) {
+
         this.dataDevolucao = dataDevolucao;
         this.motivo = motivo;
         this.valorReembolsado = valorReembolsado;
