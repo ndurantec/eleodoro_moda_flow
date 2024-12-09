@@ -6,11 +6,11 @@ import eleodoro.eleodoro_moda_flow.modelo.Devolucao;
 
 public class DevolucaoRepository {
 
-    public void save(Devolucao novaDevolucao) {
-    }
-
     public static Optional<Devolucao> findById(Long id) {
         return null;
+    }
+
+    public void save(Devolucao novaDevolucao) {
     }
 
     public boolean existsById(Long id) {
