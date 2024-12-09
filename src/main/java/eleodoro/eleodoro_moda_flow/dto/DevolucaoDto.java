@@ -57,5 +57,9 @@ public class DevolucaoDto {
     public Devolucao novaDevolucao(){
         return new Devolucao(dataDevolucao, motivo, valorReembolsado, venda);
     }
+
+    public Object getNome() {
+        return null;
+    }
     
 }

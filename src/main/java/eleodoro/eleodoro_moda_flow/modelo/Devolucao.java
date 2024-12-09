@@ -77,4 +77,7 @@ public class Devolucao implements Serializable{
                 ", venda=" + venda +
                 '}';
     }
+
+    public void setNome(Object nome) {
+    }
 }
