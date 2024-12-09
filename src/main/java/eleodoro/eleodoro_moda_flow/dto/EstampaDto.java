@@ -1,7 +1,6 @@
 package eleodoro.eleodoro_moda_flow.dto;
 
 import eleodoro.eleodoro_moda_flow.modelo.Estampa;
-import eleodoro.eleodoro_moda_flow.modelo.Produto;
 
 public class EstampaDto {
 
@@ -64,7 +63,7 @@ public class EstampaDto {
 
 
     public Object getNome() {
-        // TODO Auto-generated method stub
+        
         throw new UnsupportedOperationException("Unimplemented method 'getNome'");
     }
 }
