@@ -18,62 +18,63 @@ public class Estampa implements Serializable {
     private Long id;   
     private String imagem;
     private String tipo;
-    private double comprimento;
+    private double comprimento;   
    
-    @Deprecated
     public Estampa() {
     }
 
-    
     public Estampa(String imagem, String tipo, double comprimento) {
         this.imagem = imagem;
         this.tipo = tipo;
         this.comprimento = comprimento;
     }
 
+    public static Long getSerialversionuid() {
+        return serialVersionUID;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getImagem() {
         return imagem;
     }
 
-
     public void setImagem(String imagem) {
         this.imagem = imagem;
     }
-
 
     public String getTipo() {
         return tipo;
     }
 
-
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-
 
     public double getComprimento() {
         return comprimento;
     }
 
-
     public void setComprimento(double comprimento) {
         this.comprimento = comprimento;
     }
 
-
-    
-
     @Override
     public String toString() {
-        return "estampa [imagem=" + imagem + ", tipo=" + tipo + ", comprimento=" + comprimento + "]";
+        return "Estampa [id=" + id + ", imagem=" + imagem + ", tipo=" + tipo + ", comprimento=" + comprimento + "]";
     }
-
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + ((imagem == null) ? 0 : imagem.hashCode());
         result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
         long temp;
@@ -81,7 +82,6 @@ public class Estampa implements Serializable {
         result = prime * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
-
 
     @Override
     public boolean equals(Object obj) {
@@ -92,6 +92,11 @@ public class Estampa implements Serializable {
         if (getClass() != obj.getClass())
             return false;
         Estampa other = (Estampa) obj;
+        if (id == null) {
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id))
+            return false;
         if (imagem == null) {
             if (other.imagem != null)
                 return false;
@@ -105,25 +110,14 @@ public class Estampa implements Serializable {
         if (Double.doubleToLongBits(comprimento) != Double.doubleToLongBits(other.comprimento))
             return false;
         return true;
-    }
-
-
+    }    
+   
     public Estampa novoEstampa(){
         return new Estampa(imagem, tipo, comprimento);
     }
 
-
-    public Map<String, ?> getId() {
-       
-        throw new UnsupportedOperationException("Unimplemented method 'getId'");
-    }
-
-
     public void setNome(Object nome) {
-
+        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'setNome'");
     }
-    
-
-
 }
