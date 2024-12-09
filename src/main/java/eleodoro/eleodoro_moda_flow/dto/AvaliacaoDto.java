@@ -8,13 +8,14 @@ import eleodoro.eleodoro_moda_flow.modelo.Venda;
 
 public class AvaliacaoDto {
     
+    private Long id;
     private Double nota;
     private String comentario;
     private LocalDate dataAvaliacao;
     private Venda venda;
     private Cliente cliente;
 
-    
+    @Deprecated
     public AvaliacaoDto() {
     }
 
@@ -26,7 +27,14 @@ public class AvaliacaoDto {
         this.cliente = cliente;
     }
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+    
     public Double getNota() {
         return nota;
     }
@@ -65,14 +73,20 @@ public class AvaliacaoDto {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
-    }
-    
+    }   
+
     public Avaliacao novoAvaliacao(){
         return new Avaliacao(nota, comentario, dataAvaliacao, venda, cliente);
-    }
-
+    } 
+    
     public Avaliacao atualizarAvaliacao(Avaliacao avaliacaoExistente) {
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return "AvaliacaoDto [id=" + id + ", nota=" + nota + ", comentario=" + comentario + ", dataAvaliacao="
+                + dataAvaliacao + ", venda=" + venda + ", cliente=" + cliente + "]";
     }
 
 }
