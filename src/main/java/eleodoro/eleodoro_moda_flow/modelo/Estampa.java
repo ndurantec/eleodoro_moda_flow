@@ -114,13 +114,13 @@ public class Estampa implements Serializable {
 
 
     public Map<String, ?> getId() {
-        // TODO Auto-generated method stub
+       
         throw new UnsupportedOperationException("Unimplemented method 'getId'");
     }
 
 
     public void setNome(Object nome) {
-        // TODO Auto-generated method stub
+
         throw new UnsupportedOperationException("Unimplemented method 'setNome'");
     }
     
