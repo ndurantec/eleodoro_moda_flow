@@ -82,5 +82,9 @@ public class ProdutoDto {
                 + tamanho + ", pedido=" + pedido + "]";
     }
 
+    public Produto atualizarProduto(Produto produtoExistente) {
+        return null;
+    }
+
     
 }
