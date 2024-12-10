@@ -22,7 +22,7 @@ public class Cliente implements Serializable {
     private String Nome;
     private LocalDate dateCad;
     private String cpf;   
-   
+    private Long id;
 
     @Deprecated
 
