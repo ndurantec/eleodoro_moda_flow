@@ -116,10 +116,10 @@ public class Pedido implements Serializable{
         return true;
     }
 
-    public void setNome(Object nome) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setNome'");
-    }
+ 
+
+
+
 
     
 }
