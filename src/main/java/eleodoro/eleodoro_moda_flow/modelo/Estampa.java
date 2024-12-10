@@ -1,7 +1,6 @@
 package eleodoro.eleodoro_moda_flow.modelo;
 
 import java.io.Serializable;
-import java.util.Map;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

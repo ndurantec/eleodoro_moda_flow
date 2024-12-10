@@ -7,15 +7,15 @@ import eleodoro.eleodoro_moda_flow.modelo.Pedido;
 import eleodoro.eleodoro_moda_flow.modelo.Cliente;
 
 public class ClienteDto {
+    private Long id;
     private String Nome;
     private LocalDate dateCad;
     private String cpf;
-        private Long id;
        
+   
         @Deprecated
-    
         public ClienteDto() {
-        }
+        }   
     
         public ClienteDto(String nome, LocalDate dateCad, String cpf) {
             Nome = nome;
