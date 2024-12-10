@@ -12,10 +12,10 @@ public class ClienteDto {
     private LocalDate dateCad;
     private String cpf;
        
-        public ClienteDto() {
-    }   
-
+   
         @Deprecated
+        public ClienteDto() {
+        }   
     
         public ClienteDto(String nome, LocalDate dateCad, String cpf) {
             Nome = nome;
