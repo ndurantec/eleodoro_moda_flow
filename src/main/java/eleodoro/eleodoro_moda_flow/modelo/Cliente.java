@@ -3,7 +3,6 @@ package eleodoro.eleodoro_moda_flow.modelo;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,27 +19,38 @@ public class Cliente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String Nome;
+    private String nome;
     private LocalDate dateCad;
-    private String cpf;   
-   
-
+    private String cpf;
+    
     @Deprecated
+    public Cliente() {
+    }
+
     public Cliente(String nome, LocalDate dateCad, String cpf) {
-        Nome = nome;
+        this.nome = nome;
         this.dateCad = dateCad;
         this.cpf = cpf;
     }
 
-    public Cliente() {
+    public static long getSerialversionuid() {
+        return serialVersionUID;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
     public void setNome(String nome) {
-        Nome = nome;
+        this.nome = nome;
     }
 
     public LocalDate getDateCad() {
@@ -59,23 +69,21 @@ public class Cliente implements Serializable {
         this.cpf = cpf;
     }
 
-
     @Override
     public String toString() {
-        return "Cliente [Nome=" + Nome + ", dateCad=" + dateCad + ", cpf=" + cpf + "]";
+        return "Cliente [id=" + id + ", nome=" + nome + ", dateCad=" + dateCad + ", cpf=" + cpf + "]";
     }
-
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((Nome == null) ? 0 : Nome.hashCode());
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        result = prime * result + ((nome == null) ? 0 : nome.hashCode());
         result = prime * result + ((dateCad == null) ? 0 : dateCad.hashCode());
         result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
         return result;
     }
-
 
     @Override
     public boolean equals(Object obj) {
@@ -86,10 +94,15 @@ public class Cliente implements Serializable {
         if (getClass() != obj.getClass())
             return false;
         Cliente other = (Cliente) obj;
-        if (Nome == null) {
-            if (other.Nome != null)
+        if (id == null) {
+            if (other.id != null)
                 return false;
-        } else if (!Nome.equals(other.Nome))
+        } else if (!id.equals(other.id))
+            return false;
+        if (nome == null) {
+            if (other.nome != null)
+                return false;
+        } else if (!nome.equals(other.nome))
             return false;
         if (dateCad == null) {
             if (other.dateCad != null)
@@ -102,6 +115,5 @@ public class Cliente implements Serializable {
         } else if (!cpf.equals(other.cpf))
             return false;
         return true;
-    }
-
+    }   
 }

@@ -61,7 +61,10 @@ public class PedidoController {
 
         if (pedidoBanco.isPresent()) {
             Pedido pedidoModificado = pedidoBanco.get();
-            pedidoModificado.setNome(pedidoDto.getNome());
+            pedidoModificado.setQuantidade(pedidoDto.getQuantidade());
+            pedidoModificado.setEstampa(pedidoDto.getEstampa());
+            pedidoModificado.setValorTotal(pedidoDto.getValorTotal());
+            pedidoDto.setData(pedidoDto.getData());
 
             pedidoRepository.save(pedidoModificado);
             return ResponseEntity.ok(pedidoModificado);

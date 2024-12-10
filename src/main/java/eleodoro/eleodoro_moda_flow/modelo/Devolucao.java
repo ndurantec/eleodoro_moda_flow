@@ -21,8 +21,11 @@ public class Devolucao implements Serializable{
     private double valorReembolsado;
     private Venda venda;
 
-      public Devolucao(LocalDate dataDevolucao, String motivo, double valorReembolsado, Venda venda) {
+    @Deprecated
+    public Devolucao() {
+    }
 
+      public Devolucao(LocalDate dataDevolucao, String motivo, double valorReembolsado, Venda venda) {
         this.dataDevolucao = dataDevolucao;
         this.motivo = motivo;
         this.valorReembolsado = valorReembolsado;
@@ -79,6 +82,4 @@ public class Devolucao implements Serializable{
                 '}';
     }
 
-    public void setNome(Object nome) {
-    }
 }

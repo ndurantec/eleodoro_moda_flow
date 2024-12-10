@@ -8,63 +8,88 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-
 @Entity
-public class Venda implements Serializable{
+public class Venda implements Serializable {
 
-    public Venda(int qantidade, double valor, LocalDate data, Pedido pedido) {
-        this.qantidade = qantidade;
-        this.valor = valor;
-        this.data = data;
-        this.pedido = pedido;
-    }
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private Double valorTotal;
+    private LocalDate dataVenda;
+    private Produto produto;
+    private Cliente cliente;
+
+    @Deprecated
     public Venda() {
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) 
-    private int qantidade;
-    private double valor;
-    private LocalDate data;
-    private Pedido pedido;
-    
-    public int getQantidade() {
-        return qantidade;
+    public Venda(Double valorTotal, LocalDate dataVenda, Produto produto, Cliente cliente) {
+        this.valorTotal = valorTotal;
+        this.dataVenda = dataVenda;
+        this.produto = produto;
+        this.cliente = cliente;
     }
-    public void setQantidade(int qantidade) {
-        this.qantidade = qantidade;
+
+    public Long getId() {
+        return id;
     }
-    public double getValor() {
-        return valor;
+
+    public void setId(Long id) {
+        this.id = id;
     }
-    public void setValor(double valor) {
-        this.valor = valor;
+
+    public Double getValorTotal() {
+        return valorTotal;
     }
-    public LocalDate getData() {
-        return data;
+
+    public void setValorTotal(Double valorTotal) {
+        this.valorTotal = valorTotal;
     }
-    public void setData(LocalDate data) {
-        this.data = data;
+
+    public LocalDate getDataVenda() {
+        return dataVenda;
     }
-    public Pedido getPedido() {
-        return pedido;
+
+    public void setDataVenda(LocalDate dataVenda) {
+        this.dataVenda = dataVenda;
     }
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
+
+    public Produto getProduto() {
+        return produto;
     }
-   
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    @Override
+    public String toString() {
+        return "Venda [id=" + id + ", valorTotal=" + valorTotal + ", dataVenda=" + dataVenda + ", produto=" + produto
+                + ", cliente=" + cliente + "]";
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + qantidade;
-        long temp;
-        temp = Double.doubleToLongBits(valor);
-        result = prime * result + (int) (temp ^ (temp >>> 32));
-        result = prime * result + ((data == null) ? 0 : data.hashCode());
-        result = prime * result + ((pedido == null) ? 0 : pedido.hashCode());
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        result = prime * result + ((valorTotal == null) ? 0 : valorTotal.hashCode());
+        result = prime * result + ((dataVenda == null) ? 0 : dataVenda.hashCode());
+        result = prime * result + ((produto == null) ? 0 : produto.hashCode());
+        result = prime * result + ((cliente == null) ? 0 : cliente.hashCode());
         return result;
     }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -74,29 +99,32 @@ public class Venda implements Serializable{
         if (getClass() != obj.getClass())
             return false;
         Venda other = (Venda) obj;
-        if (qantidade != other.qantidade)
-            return false;
-        if (Double.doubleToLongBits(valor) != Double.doubleToLongBits(other.valor))
-            return false;
-        if (data == null) {
-            if (other.data != null)
+        if (id == null) {
+            if (other.id != null)
                 return false;
-        } else if (!data.equals(other.data))
+        } else if (!id.equals(other.id))
             return false;
-        if (pedido == null) {
-            if (other.pedido != null)
+        if (valorTotal == null) {
+            if (other.valorTotal != null)
                 return false;
-        } else if (!pedido.equals(other.pedido))
+        } else if (!valorTotal.equals(other.valorTotal))
+            return false;
+        if (dataVenda == null) {
+            if (other.dataVenda != null)
+                return false;
+        } else if (!dataVenda.equals(other.dataVenda))
+            return false;
+        if (produto == null) {
+            if (other.produto != null)
+                return false;
+        } else if (!produto.equals(other.produto))
+            return false;
+        if (cliente == null) {
+            if (other.cliente != null)
+                return false;
+        } else if (!cliente.equals(other.cliente))
             return false;
         return true;
+    
     }
-
-    @Override
-    public String toString() {
-        return "Venda [qantidade=" + qantidade + ", valor=" + valor + ", data=" + data + ", pedido=" + pedido + "]";
-    }
-
-
-   
-
 }

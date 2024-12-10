@@ -71,13 +71,9 @@ public class PedidoDto {
     }
 
     public Pedido novoPedido() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'novoPedido'");
+        return new Pedido(quantidade, data, valorTotal, estampa);
     }
 
-    public Object getNome() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getNome'");
-    }   
+    
 
 }
