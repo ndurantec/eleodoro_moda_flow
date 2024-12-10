@@ -2,7 +2,7 @@ package eleodoro.eleodoro_moda_flow.modelo;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-
+import java.util.Map;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -104,6 +104,10 @@ public class Cliente implements Serializable {
         } else if (!cpf.equals(other.cpf))
             return false;
         return true;
+    }
+
+    public Map<String, ?> getId() {
+        return null;
     }
 
 }
