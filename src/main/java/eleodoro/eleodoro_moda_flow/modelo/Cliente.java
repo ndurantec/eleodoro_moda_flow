@@ -19,10 +19,11 @@ public class Cliente implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String Nome;
     private LocalDate dateCad;
     private String cpf;   
-    private Long id;
+   
 
     @Deprecated
 
