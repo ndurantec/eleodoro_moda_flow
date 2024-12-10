@@ -26,14 +26,18 @@ public class Cliente implements Serializable {
    
 
     @Deprecated
+    public Cliente() {
+    }
+    
+    //tudo ok
+     
     public Cliente(String nome, LocalDate dateCad, String cpf) {
         Nome = nome;
         this.dateCad = dateCad;
         this.cpf = cpf;
     }
 
-    public Cliente() {
-    }
+   
 
     public String getNome() {
         return Nome;
