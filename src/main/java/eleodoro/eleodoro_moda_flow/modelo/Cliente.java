@@ -29,6 +29,8 @@ public class Cliente implements Serializable {
     public Cliente() {
     }
     
+    //tudo ok
+     
     public Cliente(String nome, LocalDate dateCad, String cpf) {
         Nome = nome;
         this.dateCad = dateCad;
