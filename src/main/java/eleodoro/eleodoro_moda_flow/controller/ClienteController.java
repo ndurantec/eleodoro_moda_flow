@@ -19,7 +19,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import eleodoro.eleodoro_moda_flow.dto.ClienteDto;
 import eleodoro.eleodoro_moda_flow.modelo.Cliente;
-import eleodoro.eleodoro_moda_flow.repository.ClienteRepository;
 
 @RestController
 @CrossOrigin("*")
@@ -27,7 +26,7 @@ import eleodoro.eleodoro_moda_flow.repository.ClienteRepository;
 public class ClienteController {
 
     @Autowired
-    private ClienteRepository clienteRepository;
+    private ClienteRepository ClienteRepository;
 
     // Método de teste, pode ser removido depois
     @GetMapping(value = "/imprimir")
@@ -40,7 +39,7 @@ public class ClienteController {
     public ResponseEntity<Cliente> insert(@RequestBody ClienteDto clienteDto) {
         Cliente novoCliente = clienteDto.novoCliente();
 
-        clienteRepository.save(novoCliente);
+        ClienteRepository.save(novoCliente);
 
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
             .path("/{id}")
@@ -53,14 +52,14 @@ public class ClienteController {
     // Método para listar todos os clientes
     @GetMapping
     public ResponseEntity<List<Cliente>> findAll() {
-        List<Cliente> clientes = clienteRepository.findAll();
+        List<Cliente> clientes = ClienteRepository.findAll();
         return ResponseEntity.ok(clientes);
     }
 
     // Método para buscar um cliente por ID
     @GetMapping(value = "/{id}")
     public ResponseEntity<Cliente> findById(@PathVariable Long id) {
-        Optional<Cliente> cliente = clienteRepository.findById(id);
+        Optional<Cliente> cliente = ClienteRepository.findById(id);
         if (cliente.isPresent()) {
             return ResponseEntity.ok(cliente.get());
         } else {
@@ -71,11 +70,11 @@ public class ClienteController {
     // Método para atualizar um cliente
     @PutMapping(value = "/{id}")
     public ResponseEntity<Cliente> update(@PathVariable Long id, @RequestBody ClienteDto clienteDto) {
-        Optional<Cliente> clienteOptional = clienteRepository.findById(id);
+        Optional<Cliente> clienteOptional = ClienteRepository.findById(id);
         if (clienteOptional.isPresent()) {
             Cliente clienteExistente = clienteOptional.get();
             Cliente clienteAtualizado = clienteDto.atualizarCliente(clienteExistente);
-            clienteRepository.save(clienteAtualizado);
+            ClienteRepository.save(clienteAtualizado);
             return ResponseEntity.ok(clienteAtualizado);
         } else {
             return ResponseEntity.notFound().build();
@@ -85,9 +84,9 @@ public class ClienteController {
     // Método para excluir um cliente
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
-        Optional<Cliente> cliente = clienteRepository.findById(id);
+        Optional<Cliente> cliente = ClienteRepository.findById(id);
         if (cliente.isPresent()) {
-            clienteRepository.delete(cliente.get());
+            ClienteRepository.delete(cliente.get());
             return ResponseEntity.noContent().build();
         } else {
             return ResponseEntity.notFound().build();
