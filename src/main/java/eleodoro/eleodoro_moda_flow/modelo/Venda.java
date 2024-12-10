@@ -125,5 +125,6 @@ public class Venda implements Serializable {
         } else if (!cliente.equals(other.cliente))
             return false;
         return true;
+    
     }
 }
