@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import eleodoro.eleodoro_moda_flow.dto.ProdutoDto;
-import eleodoro.eleodoro_moda_flow.modelo.Devolucao;
 import eleodoro.eleodoro_moda_flow.modelo.Produto;
 import eleodoro.eleodoro_moda_flow.repository.ProdutoRepository;
 
@@ -38,7 +37,7 @@ public class ProdutoController {
     
     // Método de inserção
     @PostMapping(value = "/insert")
-    public ResponseEntity<Produto> insert(@RequestBody ProdutoDto produtoDto){
+    public ResponseEntity<Produto> insert(@RequestBody ProdutoDto produtoDto) {
         Produto novoProduto = produtoDto.novoProduto();
         produtoRepository.save(novoProduto);
 
@@ -53,16 +52,16 @@ public class ProdutoController {
     }
 
     // Método para listar todos os produtos
-  //  @GetMapping
-    //public ResponseEntity<List<Devolucao>> findAll() {
-       // List<Devolucao> produtos = produtoRepository.findAll();
-       // return ResponseEntity.ok(produtos);
-   // }
+    @GetMapping
+    public ResponseEntity<List<Produto>> findAll() {
+        List<Produto> produtos = produtoRepository.findAll();
+        return ResponseEntity.ok(produtos);
+    }
 
     // Método para buscar um produto por ID
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Devolucao> findById(@PathVariable Long id) {
-        Optional<Devolucao> produto = produtoRepository.findById(id);
+    public ResponseEntity<Produto> findById(@PathVariable Long id) {
+        Optional<Produto> produto = produtoRepository.findById(id);
         if (produto.isPresent()) {
             return ResponseEntity.ok(produto.get());
         } else {
@@ -73,9 +72,9 @@ public class ProdutoController {
     // Método para atualizar um produto
     @PutMapping(value = "/{id}")
     public ResponseEntity<Produto> update(@PathVariable Long id, @RequestBody ProdutoDto produtoDto) {
-        Optional<Devolucao> produtoOptional = produtoRepository.findById(id);
+        Optional<Produto> produtoOptional = produtoRepository.findById(id);
         if (produtoOptional.isPresent()) {
-            Devolucao produtoExistente = produtoOptional.get();
+            Produto produtoExistente = produtoOptional.get();
             Produto produtoAtualizado = produtoDto.atualizarProduto(produtoExistente);
             produtoRepository.save(produtoAtualizado);
             return ResponseEntity.ok(produtoAtualizado);
@@ -87,7 +86,7 @@ public class ProdutoController {
     // Método para excluir um produto
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
-        Optional<Devolucao> produto = produtoRepository.findById(id);
+        Optional<Produto> produto = produtoRepository.findById(id);
         if (produto.isPresent()) {
             produtoRepository.delete(produto.get());
             return ResponseEntity.noContent().build();

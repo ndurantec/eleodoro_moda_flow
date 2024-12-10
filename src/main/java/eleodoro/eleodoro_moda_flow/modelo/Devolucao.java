@@ -11,7 +11,7 @@ import jakarta.persistence.Id;
 @Entity
 public class Devolucao implements Serializable{
     
-    private static final long SerialVersionUID =1L;
+    private static final long SerialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,6 @@ public class Devolucao implements Serializable{
     private double valorReembolsado;
     private Venda venda;
 
-    @Deprecated
       public Devolucao(LocalDate dataDevolucao, String motivo, double valorReembolsado, Venda venda) {
 
         this.dataDevolucao = dataDevolucao;
