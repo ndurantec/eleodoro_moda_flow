@@ -60,6 +60,14 @@ public class ClienteDto {
             return "ClienteDto [Nome=" + Nome + ", dateCad=" + dateCad + ", cpf=" + cpf + ", id=" + id + "]";
         }
 
+        public Cliente novoCliente() {
+            return null;
+        }
+
+        public Cliente atualizarCliente(Cliente clienteExistente) {
+            return null;
+        }
+
 
 
 
