@@ -24,7 +24,7 @@ import eleodoro.eleodoro_moda_flow.repository.EstampaRepository;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping(value = "*/estampa")
+@RequestMapping(value = "/estampa")
 public class EstampaController {
 
     @Autowired

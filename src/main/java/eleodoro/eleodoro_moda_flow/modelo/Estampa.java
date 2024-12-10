@@ -1,7 +1,6 @@
 package eleodoro.eleodoro_moda_flow.modelo;
 
 import java.io.Serializable;
-import java.util.Map;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,15 +14,18 @@ public class Estampa implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String nome;
     private Long id;   
     private String imagem;
     private String tipo;
-    private double comprimento;   
-   
+    private double comprimento;
+  
     public Estampa() {
     }
 
-    public Estampa(String imagem, String tipo, double comprimento) {
+    public Estampa(String nome, Long id, String imagem, String tipo, double comprimento) {
+        this.nome = nome;
+        this.id = id;
         this.imagem = imagem;
         this.tipo = tipo;
         this.comprimento = comprimento;
@@ -31,6 +33,14 @@ public class Estampa implements Serializable {
 
     public static Long getSerialversionuid() {
         return serialVersionUID;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public Long getId() {
@@ -67,13 +77,15 @@ public class Estampa implements Serializable {
 
     @Override
     public String toString() {
-        return "Estampa [id=" + id + ", imagem=" + imagem + ", tipo=" + tipo + ", comprimento=" + comprimento + "]";
-    }
-
+        return "Estampa [nome=" + nome + ", id=" + id + ", imagem=" + imagem + ", tipo=" + tipo + ", comprimento="
+                + comprimento + "]";
+    }   
+  
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
+        result = prime * result + ((nome == null) ? 0 : nome.hashCode());
         result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + ((imagem == null) ? 0 : imagem.hashCode());
         result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
@@ -92,6 +104,11 @@ public class Estampa implements Serializable {
         if (getClass() != obj.getClass())
             return false;
         Estampa other = (Estampa) obj;
+        if (nome == null) {
+            if (other.nome != null)
+                return false;
+        } else if (!nome.equals(other.nome))
+            return false;
         if (id == null) {
             if (other.id != null)
                 return false;
@@ -110,14 +127,12 @@ public class Estampa implements Serializable {
         if (Double.doubleToLongBits(comprimento) != Double.doubleToLongBits(other.comprimento))
             return false;
         return true;
-    }    
-   
-    public Estampa novoEstampa(){
-        return new Estampa(imagem, tipo, comprimento);
     }
 
-    public void setNome(Object nome) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setNome'");
-    }
+
+
+    
+  
+
+    
 }
